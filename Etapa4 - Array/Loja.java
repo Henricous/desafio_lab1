@@ -7,18 +7,21 @@ public class Loja {
     
     private Endereco endereco;
     private Data dataFundacao;
-   
+    private Produto[]estoqueProdutos;
 
 
 
     //METODO CONSTRUTOR todos parametros
     public Loja (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario,
-     Endereco endereco,Data dataFundacao){
-        
-            this.nome = nome;
-            this.quantidadeFuncionarios = quantidadeFuncionarios;
-            this.dataFundacao = dataFundacao;
-            this.endereco = endereco;
+     Endereco endereco,Data dataFundacao, int quantidadeProdutos){
+
+        this.quantidadeProdutos = quantidadeProdutos;
+        this.nome = nome;
+        this.quantidadeFuncionarios = quantidadeFuncionarios;
+        this.dataFundacao = dataFundacao;
+        this.endereco = endereco;
+
+        estoqueProdutos = new Produto[quantidadeProdutos];
 
             if (salarioBaseFuncionario == 0.0){
                 this.salarioBaseFuncionario = -1;
@@ -27,15 +30,52 @@ public class Loja {
             }
         }
 
-    //METODO CONSTRUTOR 2 parametros
-    public Loja (String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao){
 
-    
+    //METODO CONSTRUTOR 2 parametros
+    public Loja (String nome, int quantidadeFuncionarios, Endereco endereco, 
+    Data dataFundacao,int quantidadeProdutos){
+
+        this.quantidadeProdutos = quantidadeProdutos;
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.endereco = endereco;
         this.dataFundacao = dataFundacao;
+
+        estoqueProdutos = new Produto[quantidadeProdutos];
     }
+
+
+    //imprimir produtos
+    public Produto[] imprimeProdutos(){
+        for (int i=0;i<estoqueProdutos.length; i++){
+        System.out.println(estoqueProdutos[i]);
+    }
+    return estoqueProdutos;
+}
+
+
+    public boolean insereProduto(Produto produto){
+        for (int i=0; i < estoqueProdutos.length; i++){
+        if (estoqueProdutos[i]==null){
+            estoqueProdutos[i] = produto;
+            return true;
+
+        }
+    }
+    return false;
+    }
+
+
+public boolean removeProduto(String nomeProduto){
+    for (int i=0; i < estoqueProdutos.length; i++){
+        if(estoqueProdutos[i] != null && estoqueProdutos[i].getNome().equals(nomeProduto)){
+            estoqueProdutos[i] = null;
+            return true;
+       }
+    }
+return false;
+}
+
     
     //METODO gastoComSalario
     public double gastosComSalario(){
@@ -61,10 +101,7 @@ public class Loja {
     }
     
 
-
-
-
-    //METODO DE ACESSO nome
+    //getters e setters
     public void setNome(String nome){
         this.nome = nome;
     }
@@ -73,7 +110,7 @@ public class Loja {
         return nome;
     }
 
-    //METODO DE ACESSO quantidadeFuncionarios
+
     public void setQuantidadeFuncionarios(int quantidadeFuncionarios){
         this.quantidadeFuncionarios = quantidadeFuncionarios;
     }
@@ -82,8 +119,7 @@ public class Loja {
         return quantidadeFuncionarios;
     }
 
-    
-    //METODO DE ACESSO salarioBaseFuncionario   
+     
     public void setSalarioBaseFuncionario(double salarioBaseFuncionario){
         this.salarioBaseFuncionario = salarioBaseFuncionario;
     }
@@ -97,7 +133,6 @@ public class Loja {
     }            
 
    
-   
     public void setEndereco(Endereco endereco){
         this.endereco = endereco;
     }
@@ -105,6 +140,7 @@ public class Loja {
     public Endereco getEndereco(){
         return endereco;
     }
+
 
     public void setDataFundacao(Data dataFundacao){
         this.dataFundacao = dataFundacao;
@@ -115,15 +151,25 @@ public class Loja {
     }
 
 
-//METODO toString
+    public Produto[] getEstoqueProdutos() {
+        return estoqueProdutos;
+    }
 
+    public void setEstoqueProdutos(Produto[] estoqueProdutos) {
+        this.estoqueProdutos = estoqueProdutos;
+    }
+
+
+    //METODO toString
     @Override
     public String toString(){
     return "Nome Loja: " + nome + ". \nQuantidade Funcionario: " + quantidadeFuncionarios + 
     ".\nTamanho Loja: "+ tamanhoDaLoja()+
     ". \nSalario Base Funcionarios: " +salarioBaseFuncionario+ "\nEndereço Loja: " +endereco+
-     "\nData da fundação:" +dataFundacao;
+     "\nData da fundação:" +dataFundacao+ "\nQuantidade estoque"+estoqueProdutos;
     }
+
+    
 }
 
 
