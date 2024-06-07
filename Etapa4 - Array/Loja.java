@@ -8,7 +8,7 @@ public class Loja {
     private Endereco endereco;
     private Data dataFundacao;
     private Produto[]estoqueProdutos;
-
+    private int quantidadeProdutos;
 
 
     //METODO CONSTRUTOR todos parametros
@@ -25,7 +25,8 @@ public class Loja {
 
             if (salarioBaseFuncionario == 0.0){
                 this.salarioBaseFuncionario = -1;
-            } else{
+            } 
+            else{
             this.salarioBaseFuncionario = salarioBaseFuncionario;
             }
         }
@@ -102,6 +103,14 @@ return false;
     
 
     //getters e setters
+
+    public void setQuantidadeProdutos(int quantidadeProdutos){
+        this.quantidadeProdutos = quantidadeProdutos;
+    }
+    public int getQuantidadeProdutos(){
+        return quantidadeProdutos;
+    }
+
     public void setNome(String nome){
         this.nome = nome;
     }
@@ -130,7 +139,9 @@ return false;
         } else{
         return salarioBaseFuncionario;
         }
-    }            
+    }
+    
+    
 
    
     public void setEndereco(Endereco endereco){

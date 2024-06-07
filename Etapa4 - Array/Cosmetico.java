@@ -6,9 +6,9 @@ public class Cosmetico extends Loja {
     
     //construtor
     public Cosmetico (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario,
-     Endereco endereco, Data dataFundacao, double taxaComercializacao){
+     Endereco endereco, Data dataFundacao, double taxaComercializacao, int quantidadeProdutos){
         //herança
-        super(nome, quantidadeFuncionarios, salarioBaseFuncionario,endereco,dataFundacao);
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario,endereco,dataFundacao, quantidadeProdutos);
         this.taxaComercializacao = taxaComercializacao;       
 
     }
