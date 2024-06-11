@@ -1,11 +1,13 @@
 public class Bijuteria extends Loja {
-    double metaVendas;
+    private double metaVendas;
+    private final String tipo;
 
     public Bijuteria (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario,
     Endereco endereco,Data dataFundacao, double metaVendas, int quantidadeProdutos){
         
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, quantidadeProdutos);
         this.metaVendas=metaVendas;
+        this.tipo  = "bijuteria";
     }
     //acessos
     public double getMetaVendas(){
@@ -15,11 +17,21 @@ public class Bijuteria extends Loja {
         this.metaVendas = metaVendas;
     }
 
+    public String getTipo(){
+        return tipo;
+    }
+
+
     @Override
     public String toString (){
-        return "Nome Loja: " + getNome() + ". \nQuantidade Funcionario: " + getQuantidadeFuncionarios() + 
-    ".\nTamanho Loja: "+ tamanhoDaLoja()+
-    ". \nSalario Base Funcionarios: " +getSalarioBaseFuncionario()+ "\nEndereço Loja: " +getEndereco()+
-    "\nMeta de vendas: " +metaVendas+ "\nData da fundação:" +getDataFundacao() ;
+        return 
+    "Nome Loja: " + getNome() + 
+    
+    "\nQuantidade Funcionario: " + getQuantidadeFuncionarios() + 
+    "\nTamanho Loja: "+ tamanhoDaLoja()+
+    "\nSalario Base Funcionarios: " +getSalarioBaseFuncionario()+ 
+    "\nEndereço Loja: " +getEndereco()+
+    "\nMeta de vendas: " +metaVendas+ 
+    "\nData da fundação:" +getDataFundacao() ;
     }
 }

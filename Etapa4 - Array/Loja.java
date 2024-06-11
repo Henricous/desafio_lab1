@@ -9,6 +9,8 @@ public class Loja {
     private Data dataFundacao;
     private Produto[]estoqueProdutos;
     private int quantidadeProdutos;
+   
+    
 
 
     //METODO CONSTRUTOR todos parametros
@@ -20,6 +22,8 @@ public class Loja {
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.dataFundacao = dataFundacao;
         this.endereco = endereco;
+        
+       
 
         estoqueProdutos = new Produto[quantidadeProdutos];
 
@@ -41,6 +45,7 @@ public class Loja {
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.endereco = endereco;
         this.dataFundacao = dataFundacao;
+
 
         estoqueProdutos = new Produto[quantidadeProdutos];
     }
@@ -103,6 +108,9 @@ return false;
     
 
     //getters e setters
+
+
+
 
     public void setQuantidadeProdutos(int quantidadeProdutos){
         this.quantidadeProdutos = quantidadeProdutos;

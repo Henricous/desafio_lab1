@@ -1,11 +1,15 @@
 public class Vestuario extends Loja {
-    boolean  produtosImportados;
+    private boolean  produtosImportados;
+    private final String tipo;
+    
+
 
     public Vestuario (String nome,int quantidadeFuncionarios, double salarioBaseFuncionario, 
     Endereco endereco,Data dataFundacao, boolean produtosImportados, int quantidadeProdutos){
         //superclasse
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, quantidadeProdutos);
         this.produtosImportados = produtosImportados;
+        this.tipo = "vestuario";
 
     }
     //acessos
@@ -16,12 +20,21 @@ public class Vestuario extends Loja {
         this.produtosImportados = produtosImportados;
     }
 
+    public String getTipo(){
+        return tipo;
+    }
+
     @Override
     public String toString(){
-    return "Nome Loja: " + getNome() + ". \nQuantidade Funcionario: " + getQuantidadeFuncionarios() + 
-    ".\nTamanho Loja: "+ tamanhoDaLoja()+". \nSalario Base Funcionarios: "
-     +getSalarioBaseFuncionario()+ "\nEndereço Loja: " +getEndereco()+
-     "\nData da fundação:" +getDataFundacao()+"\nProduto importado: " +produtosImportados;
+    return 
+    "Nome Loja: " + getNome() +  
+   
+    "\nQuantidade Funcionario: " + getQuantidadeFuncionarios() + 
+    "\nTamanho Loja: "+ tamanhoDaLoja()+
+    "\nSalario Base Funcionarios: " +getSalarioBaseFuncionario()+ 
+    "\nEndereço Loja: " +getEndereco()+
+    "\nData da fundação:" +getDataFundacao()+
+    "\nProduto importado: " +produtosImportados;
     }
 }
 

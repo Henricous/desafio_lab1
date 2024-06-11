@@ -2,14 +2,16 @@
 
 public class Cosmetico extends Loja {
 
-    double taxaComercializacao;
-    
+    private double taxaComercializacao;
+    private final String tipo;
+
     //construtor
     public Cosmetico (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario,
      Endereco endereco, Data dataFundacao, double taxaComercializacao, int quantidadeProdutos){
         //herança
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario,endereco,dataFundacao, quantidadeProdutos);
-        this.taxaComercializacao = taxaComercializacao;       
+        this.taxaComercializacao = taxaComercializacao;   
+        this.tipo  = "cosmetico";    
 
     }
     //acessos
@@ -20,12 +22,21 @@ public class Cosmetico extends Loja {
         this.taxaComercializacao = taxaComercializacao;
     }
 
+    public String getTipo(){
+        return tipo;
+    }
 
+  
 @Override
 public String toString(){
-    return "Nome Loja: " + getNome() + ". \nQuantidade Funcionario: " + getQuantidadeFuncionarios() + 
+    return 
+    "Nome Loja: " + getNome() + 
+    
+    ".\nQuantidade Funcionario: " + getQuantidadeFuncionarios() + 
     ".\nTamanho Loja: "+ tamanhoDaLoja()+
-    ". \nSalario Base Funcionarios: " +getSalarioBaseFuncionario()+ "\nEndereço Loja: " +getEndereco()+
-     "\nData da fundação:" +getDataFundacao()+ "\nData de comercialização: " +taxaComercializacao;
+    ".\nSalario Base Funcionarios: " +getSalarioBaseFuncionario()+ 
+    "\nEndereço Loja: " +getEndereco()+
+    "\nData da fundação:" +getDataFundacao()+
+    "\nData de comercialização: " +taxaComercializacao;
 
 }}

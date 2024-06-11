@@ -1,11 +1,23 @@
+import java.util.Arrays;
+
 public class Shopping {
     private String nome;
     private Endereco endereco;
     private Loja[]lojas;
+   
+    
+    
+
+
+
 
 public Shopping(String nome, Endereco endereco, int quantidadeMaximaLojas){
-    Loja[]Loja = new Loja[quantidadeMaximaLojas];
+    this.nome = nome;
+    this.endereco = endereco;
+    this.lojas = new Loja[quantidadeMaximaLojas];
+
 }
+    
 
 //Acessos getters e setters 
 public String getNome() {
@@ -28,7 +40,7 @@ public Loja[] getLojas() {
     return lojas;
 }
 
-public void setLoja(Loja[] lojas) {
+public void setLojas(Loja[] lojas) {
     this.lojas = lojas;
 }
 
@@ -44,9 +56,10 @@ return false;
 }
 
 //metodo removeLojas
-public boolean removeLoja(String loja){
+public boolean removeLoja(String nomeLoja){
+
     for (int i=0; i<lojas.length; i++){
-        if(lojas[i] != null && lojas[i].getNome().equals(loja)){
+        if(lojas[i] != null && lojas[i].getNome().equals(nomeLoja)){
         lojas[i] = null;
         return true;
         }
@@ -56,29 +69,52 @@ public boolean removeLoja(String loja){
 
 //metodo quantidadeLojasPorTipo
 public int quantidadeLojasPorTipo(String tipo){
-    
-    String[]tiposValidos ={"alimentacao", "bujuteria", "costemtico" , "informatica"};
-    if(!tiposValidos.equals(tipo)){
+
+    if(!tipo.equals("Alimentacao") && !tipo.equals("Bijuteria") && !tipo.equals("Cosmetico")
+    && !tipo.equals("Informatica") && !tipo.equals("Vestuario")){
         return -1;
     }
 
     int cont = 0;
-    for (int i=0; i<lojas.length; i++){        
-        if(lojas[i]!= null && lojas[i].getNome().equalsIgnoreCase(tipo)){
-        cont += 1;
+    for (Loja loja : lojas){
+        if(loja != null && loja.getClass().getSimpleName().equals(tipo)){
+            cont++;
         }
     }
     return cont;
 }
 
+
+public Informatica lojaSeguroMaisCaro(){
+    Informatica lojaSeguroMaisCaro = null;
+    double maiorValorSeguro = 0.0;
+
+    for(Loja loja : lojas){
+        if (loja instanceof Informatica){
+            Informatica informatica = (Informatica) loja;
+            double valorSeguro = informatica.getSeguroEletronicos();
+
+            if(valorSeguro > maiorValorSeguro){
+                maiorValorSeguro = valorSeguro;
+                lojaSeguroMaisCaro = informatica;
+            }
+
+
+        }
+
+    }
+    return lojaSeguroMaisCaro;
+
+}
     
 
 @Override
-public String toString() {
-    return "\nNome shopping: "+nome+ "\n Endereço: " +endereco + "\nLojas: " +lojas ;
+public String toString(){
+    return 
+    "\nNome shopping: "+nome+ 
+    "\n Endereço: " +endereco +
+    "\nLojas: " + Arrays.toString(lojas);
 }
-
-
 }
 
 
