@@ -3,7 +3,7 @@
 public class Cosmetico extends Loja {
 
     private double taxaComercializacao;
-    private final String tipo;
+  
 
     //construtor
     public Cosmetico (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario,
@@ -11,7 +11,7 @@ public class Cosmetico extends Loja {
         //herança
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario,endereco,dataFundacao, quantidadeProdutos);
         this.taxaComercializacao = taxaComercializacao;   
-        this.tipo  = "cosmetico";    
+        
 
     }
     //acessos
@@ -22,9 +22,6 @@ public class Cosmetico extends Loja {
         this.taxaComercializacao = taxaComercializacao;
     }
 
-    public String getTipo(){
-        return tipo;
-    }
 
   
 @Override

@@ -1,6 +1,6 @@
 public class Vestuario extends Loja {
     private boolean  produtosImportados;
-    private final String tipo;
+ 
     
 
 
@@ -9,7 +9,7 @@ public class Vestuario extends Loja {
         //superclasse
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, quantidadeProdutos);
         this.produtosImportados = produtosImportados;
-        this.tipo = "vestuario";
+       
 
     }
     //acessos
@@ -18,10 +18,6 @@ public class Vestuario extends Loja {
     }
     public void setProdutosImportados(boolean produtosImportados){
         this.produtosImportados = produtosImportados;
-    }
-
-    public String getTipo(){
-        return tipo;
     }
 
     @Override

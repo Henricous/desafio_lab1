@@ -6,7 +6,7 @@ public class Produto{
     private double preco;
 
     private Data dataValidade;
-    private Data dataAtual;
+    
    
     
     
@@ -17,7 +17,6 @@ public class Produto{
         this.preco = preco;
         this.dataValidade = dataValidade;
         
-        //INSTANCIAR DATA ATUAL = FIXAR DATA.
 
     }
 
@@ -72,6 +71,9 @@ public class Produto{
 
     @Override
     public String toString(){
-        return "\nProduto Nome: " + nome + ".\nPreço: " + preco + ".\nData de validade:\n" +dataValidade;
+        return 
+        "\nProduto Nome: " + nome + 
+        ".\nPreço: " + preco + 
+        ".\nData de validade:\n" +dataValidade;
     }
 }

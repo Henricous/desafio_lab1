@@ -272,7 +272,7 @@ public class ValidadorEtapa4 {
 		
 		//// Verificação da classe Informatica
 		//Criação da instância
-		Informatica lojaInformatica = new Informatica("Loja Informática", 10, 2100, e1, d1, 300, 10);
+		Informática lojaInformatica = new Informática("Loja Informática", 10, 2100, e1, d1, 300, 10);
 		System.out.println("\n[OK] Classe Informatica identificada");
 		
 		//public void setSeguroEletronicos(double seguroEletronicos)
@@ -337,7 +337,7 @@ public class ValidadorEtapa4 {
 		System.out.println(total == 2 ? "[OK] Método Shopping.quantidadeLojasPorTipo() - localizou duas lojas" : "[NOK] Método Shopping.quantidadeLojasPorTipo() - não conseguiu localizar as lojas");
 
 		//public Informatica lojaSeguroMaisCaro()
-		Informatica maisCaro = shopping.lojaSeguroMaisCaro();
+		Informática maisCaro = shopping.lojaSeguroMaisCaro();
 		System.out.println(maisCaro.getSeguroEletronicos() == 800 ? "[OK] Método Shopping.lojaSeguroMaisCaro()" : "[NOK] Método Shopping.lojaSeguroMaisCaro");
 
 	}

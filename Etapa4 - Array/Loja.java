@@ -107,7 +107,7 @@ return false;
     }
     
 
-    //getters e setters
+    
 
 
 
@@ -119,6 +119,8 @@ return false;
         return quantidadeProdutos;
     }
 
+
+    //getters e setters
     public void setNome(String nome){
         this.nome = nome;
     }

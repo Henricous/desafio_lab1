@@ -1,16 +1,15 @@
-public class Informatica extends Loja{
+public class Informática extends Loja{
 
     private double seguroEletronicos;
-    private final String tipo;
+
     
 
-    public Informatica(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario,
+    public Informática(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario,
     Endereco endereco,Data dataFundacao, double seguroEletronicos, int quantidadeProdutos){
         
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, 
         quantidadeProdutos);
         this.seguroEletronicos = seguroEletronicos;
-        this.tipo  = "informatica";
     }
     //acessos
     public double getSeguroEletronicos(){
@@ -20,9 +19,6 @@ public class Informatica extends Loja{
         this.seguroEletronicos = seguroEletronicos;
     }
 
-    public String getTipo(){
-        return tipo;
-    }
 
 @Override
 public String toString(){

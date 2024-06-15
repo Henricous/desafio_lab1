@@ -1,6 +1,6 @@
 public class Alimentacao extends Loja {
     private Data dataAlvara;
-    private final String tipo;
+    
     
     
    
@@ -11,7 +11,7 @@ public class Alimentacao extends Loja {
 
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, quantidadeProdutos);
          this.dataAlvara = dataAlvara;
-         this.tipo = "alimentacao";  
+        
         
     }
     //acessos
@@ -22,9 +22,7 @@ public class Alimentacao extends Loja {
         this.dataAlvara = dataAlvara;
     }
 
-    public String getTipo(){
-        return tipo;
-    }
+   
 
     @Override
     public String toString(){

@@ -4,7 +4,7 @@ public class Shopping {
     private String nome;
     private Endereco endereco;
     private Loja[]lojas;
-   
+    private int quantidadeMaximaLojas;
     
     
 
@@ -14,6 +14,7 @@ public class Shopping {
 public Shopping(String nome, Endereco endereco, int quantidadeMaximaLojas){
     this.nome = nome;
     this.endereco = endereco;
+    this.quantidadeMaximaLojas = quantidadeMaximaLojas;
     this.lojas = new Loja[quantidadeMaximaLojas];
 
 }
@@ -44,6 +45,16 @@ public void setLojas(Loja[] lojas) {
     this.lojas = lojas;
 }
 
+public int getQuantidadeMaximaLojas(){
+    return quantidadeMaximaLojas;
+}
+
+public void setQuantidadeMaximaLojas(int quantidadeMaximaLojas){
+    this.quantidadeMaximaLojas = quantidadeMaximaLojas;
+}
+
+
+
 //metodo insereLoja
 public boolean insereLoja(Loja loja){
     for (int i=0; i<lojas.length; i++){
@@ -71,7 +82,7 @@ public boolean removeLoja(String nomeLoja){
 public int quantidadeLojasPorTipo(String tipo){
 
     if(!tipo.equals("Alimentacao") && !tipo.equals("Bijuteria") && !tipo.equals("Cosmetico")
-    && !tipo.equals("Informatica") && !tipo.equals("Vestuario")){
+    && !tipo.equals("Informática") && !tipo.equals("Vestuario")){
         return -1;
     }
 
@@ -85,13 +96,13 @@ public int quantidadeLojasPorTipo(String tipo){
 }
 
 
-public Informatica lojaSeguroMaisCaro(){
-    Informatica lojaSeguroMaisCaro = null;
+public Informática lojaSeguroMaisCaro(){
+    Informática lojaSeguroMaisCaro = null;
     double maiorValorSeguro = 0.0;
 
     for(Loja loja : lojas){
-        if (loja instanceof Informatica){
-            Informatica informatica = (Informatica) loja;
+        if (loja instanceof Informática){
+            Informática informatica = (Informática) loja;
             double valorSeguro = informatica.getSeguroEletronicos();
 
             if(valorSeguro > maiorValorSeguro){
